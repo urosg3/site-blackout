@@ -7,9 +7,9 @@
 Plugin Name: Berkman Site Blackout
 Plugin URI: http://blog.eagerterrier.co.uk/2012/01/stop-sopa-blackout-wp-plugin/
 Description: Blacks out your website during a specific day.
-Author: Toby Cox
+Author: Toby Cox, DJCP
 Version: 1.4
-Author URI: http://eagerterrier.co.uk
+Author URI: http://cyber.law.harvard.edu/
 
 A customized version of
 http://blog.eagerterrier.co.uk/2012/01/stop-sopa-blackout-wp-plugin/
