@@ -129,13 +129,12 @@ body {
 <div id="text-shadow-box">
     <div id="tsb-box"></div>
     <p id="tsb-text"><?php echo $sopablackout_page_title;?></p>
-    <p id="tsb-link"><a href="http://americancensorship.org/"><?php echo $sopablackout_page_title;?></a></p>
+    <p id="tsb-link"><a href="<?php echo sopablackout_get_option('page_link'); ?>"><?php echo $sopablackout_page_title;?></a></p>
     <div id="tsb-wall">
         <div id="tsb-ie"></div>
         
         <p>
 			<?php echo nl2br(stripslashes(sopablackout_get_option('message')));?>
-Learn more at <a href="http://americancensorship.org/">AmericanCensorship.org</a>
         </p>
     </div>
     <div id="tsb-spot"></div>

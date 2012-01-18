@@ -55,6 +55,7 @@ function sopablackout_get_option($option_name) {
 	$sopablackout_default_options['blackouttimezone']	= null;
     
     $sopablackout_default_options['page_title']			= 'Blacking out my site. . .';
+    $sopablackout_default_options['page_link']			= 'http://example.com';
 
     // add default options to the database (if options already exist, 
     // add_option does nothing
@@ -85,6 +86,7 @@ function sopablackout_options() {
 		// process submitted form
 		$sopablackout_options = get_option('sopablackout_options');
 		$sopablackout_options['page_title']									= $_POST['page_title'];
+		$sopablackout_options['page_link']									= $_POST['page_link'];
 		$sopablackout_options['message']									= $_POST['message'];
 		$sopablackout_options['blackoutdate_year']							= $_POST['blackoutdate_year'];
 		$sopablackout_options['blackoutdate_month']							= $_POST['blackoutdate_month'];
@@ -117,6 +119,12 @@ function sopablackout_options() {
 					</tr>
 					<tr>
 						<td><input type="text" name="page_title" id="page_title" value="<?php echo sopablackout_get_option('page_title');?>" /> </td>
+					</tr>
+					<tr>
+						<td>Page Link</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="page_link" id="page_link" value="<?php echo sopablackout_get_option('page_link');?>" /> </td>
 					</tr>
 					<tr>
 						<td>Message</td>
