@@ -5,7 +5,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title><?php bloginfo('name'); ?> &rsaquo; <?php echo $sopablackout_page_title; ?></title>
+<title><?php bloginfo('name'); ?> &rsaquo; <?php echo $siteblackout_page_title; ?></title>
 
 <style type="text/css" media="all">
 html,
@@ -128,13 +128,13 @@ body {
     
 <div id="text-shadow-box">
     <div id="tsb-box"></div>
-    <p id="tsb-text"><?php echo $sopablackout_page_title;?></p>
-    <p id="tsb-link"><a href="<?php echo sopablackout_get_option('page_link'); ?>"><?php echo $sopablackout_page_title;?></a></p>
+    <p id="tsb-text"><?php echo $siteblackout_page_title;?></p>
+    <p id="tsb-link"><a href="<?php echo siteblackout_get_option('page_link'); ?>"><?php echo $siteblackout_page_title;?></a></p>
     <div id="tsb-wall">
         <div id="tsb-ie"></div>
         
         <p>
-			<?php echo nl2br(stripslashes(sopablackout_get_option('message')));?>
+			<?php echo nl2br(stripslashes(siteblackout_get_option('message')));?>
         </p>
     </div>
     <div id="tsb-spot"></div>
