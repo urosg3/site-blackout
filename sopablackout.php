@@ -1,15 +1,19 @@
 <?php
 /**
- * @package SopaBlackout
+ * @package BerkmanSopaBlackout
  * @version 1.4
  */
 /*
-Plugin Name: SOPA Blackout
+Plugin Name: Berkman Site Blackout
 Plugin URI: http://blog.eagerterrier.co.uk/2012/01/stop-sopa-blackout-wp-plugin/
-Description: Blacks out your website on January 18th 2012 in support of those against SOPA
+Description: Blacks out your website during a specific day.
 Author: Toby Cox
 Version: 1.4
 Author URI: http://eagerterrier.co.uk
+
+A customized version of
+http://blog.eagerterrier.co.uk/2012/01/stop-sopa-blackout-wp-plugin/
+
 */
 
 $sopablackout_options = get_option('sopablackout_options'); 
@@ -40,7 +44,7 @@ function sopablackout_get_option($option_name) {
     
     $sopablackout_default_options['test_mode']			= false;
     $sopablackout_default_options['show_blackout_to_logged_in_users'] = false;
-    $sopablackout_default_options['message']			= '<p>On the Tuesday 24th January 2012, the US Senate will vote on the <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act" target="_blank">internet censorship bill</a>.<br /><br />Whilst it is an American law, it has far reaching repurcusions for the web as a whole.<br /><br />There are many companies against SOPA, such as <a href="http://www.mattcutts.com/blog/internet-censorship-sopa/" target="_blank">Google</a>, <a href="http://blog.reddit.com/2012/01/stopped-they-must-be-on-this-all.html" target="_blank">Reddit</a>, <a href="http://news.cnet.com/8301-31921_3-57342914-281/silicon-valley-execs-blast-sopa-in-open-letter/" target="_blank">Facebook, Twitter, Wikipedia</a>, and today I am lending my weight to the argument by taking my site down for the day.<br /><br />If you think SOPA doesn\'t affect you, please think again. Watch the video below, or use the form below to force politicians to take notice.<br /><br />Thank you</p>';
+    $sopablackout_default_options['message']			= 'Enter your custom message here.';
     
 	$sopablackout_default_options['blackoutdate_year']	= '2012';
 	$sopablackout_default_options['blackoutdate_month']	= '01';
@@ -50,12 +54,12 @@ function sopablackout_get_option($option_name) {
 	$sopablackout_default_options['blackouttimeend']	= 20;
 	$sopablackout_default_options['blackouttimezone']	= null;
     
-    $sopablackout_default_options['page_title']			= 'Supporting anti-SOPA Blackout day';
+    $sopablackout_default_options['page_title']			= 'Blacking out my site. . .';
 
     // add default options to the database (if options already exist, 
     // add_option does nothing
     add_option('sopablackout_options', $sopablackout_default_options, 
-               'Settings for Stop SOPA Blackout plugin');
+               'Settings for the Site Blackout plugin');
 
     // return default option if option is not in the array in the database
     // this can happen if a new option was added to the array in an upgrade
@@ -102,7 +106,7 @@ function sopablackout_options() {
 	?>
 	<div class="wrap">
 		<form method="post">
-			<h2>Stop SOPA Blackout</h2> 
+			<h2>Site Blackout Plugin</h2> 
 				
 			<div class="whitebg">
 			<fieldset class="options" name="general">
@@ -188,13 +192,13 @@ function sopablackout_options() {
 				<legend><?php _e('Enable test mode?', 'sopablackout') ?></legend>
 				<table width="100%" cellspacing="2" cellpadding="5" class="editform form-table">
 					<tr>
-						<td>By checking this box you will turn on the SOPA blackout <b>RIGHT NOW</b></td>
+						<td>By checking this box you will turn on the site blackout plugin <b>RIGHT NOW</b></td>
 					</tr>
 					<tr>
 						<td><input type="checkbox" name="test_mode" id="test_mode" value="true" <?php if (sopablackout_get_option('test_mode')) echo "checked"; ?> /> </td>
 					</tr>
 					<tr>
-						<td>By default, logged in users will see your site's full content. If you would like logged in users to get the Stop SOPA Blackout page instead, click here</td>
+						<td>By default, logged in users will see your site's full content. If you would like logged in users to get the site blackout page instead, click here</td>
 					</tr>
 					<tr>
 						<td><input type="checkbox" name="show_blackout_to_logged_in_users" id="show_blackout_to_logged_in_users" value="true" <?php if (sopablackout_get_option('show_blackout_to_logged_in_users')) echo "checked"; ?> /> </td>
@@ -309,8 +313,8 @@ function sopablackout_admin() {
 
   if (function_exists('add_options_page')) {
 
-    add_options_page('Stop SOPA Blackout' /* page title */, 
-                     'SOPA Blackout' /* menu title */, 
+    add_options_page('Site Blackout' /* page title */, 
+                     'Site Blackout' /* menu title */, 
                      8 /* min. user level */, 
                      basename(__FILE__) /* php file */ , 
                      'sopablackout_options' /* function for subpanel */);
